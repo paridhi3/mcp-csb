@@ -1,0 +1,33 @@
+[Local Files / Azure Blob Storage]
+               |
+               v
+      (MCP Filesystem Server)
+               |
+        ---(MCP protocol)---
+               |
+               v
+             [Agent]  <-----------------------------------+
+               |                                        (MCP protocol)
+               |                                            (calls)
+    +----------+-----------+-----------------+            |
+    |                      |                 |            |
+    v                      v                 v            |
+(extract_pdf)         (extract_ppt)   (summarize & categorize)  (validate)
+  Extraction Tools        Extraction Tools      LLM Tools       Validator Tool
+    |                      |                 |            |
+    +----------------------+-----------------+------------+
+               |                     (MCP protocol)
+               |                          |
+               v                          v
+           Extracted Text          Summaries & Metadata
+               |                          |
+               +--------------------------+
+                          (MCP protocol)
+                                |
+                                v
+                      (Index/Search Server)
+                                |
+                      (MCP protocol chat query)
+                                |
+                                v
+                         Chatbot Response
