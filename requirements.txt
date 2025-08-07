@@ -1,12 +1,14 @@
+streamlit
 python-dotenv
 azure-storage-blob
-python-pptx
 pymupdf
-fastapi
-uvicorn
+python-pptx
 openai
 langchain
 llama-index
 tiktoken
+fastapi
+uvicorn
 pydantic
-mcp-agents  # (Example: see https://github.com/lastmile-ai/mcp-agent or `pip install mcp-agents`)
+mcp-agents
+aiohttp
